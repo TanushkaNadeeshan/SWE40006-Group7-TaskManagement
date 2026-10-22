@@ -1,4 +1,7 @@
-import pg from 'pg';
-import 'dotenv/config';
-if (!process.env.DATABASE_URL) { console.error('Missing DATABASE_URL. Copy backend/.env.example to backend/.env and configure PostgreSQL.'); process.exit(1); }
-export const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL });
+﻿import pg from 'pg';
+
+export function createPool(connectionString) {
+  const pool = new pg.Pool({ connectionString, connectionTimeoutMillis: 5000, idleTimeoutMillis: 30000, statement_timeout: 10000 });
+  pool.on('error', error => console.error('Idle database connection failed:', error.code || error.name));
+  return pool;
+}
