@@ -164,3 +164,5 @@ Errors have an `error` string. Expect 400 validation, 401 unauthenticated, 403 f
 Passwords use salted scrypt; raw session tokens are random and only their SHA-256 hashes are stored. Sessions expire after seven days. Auth throttling is persisted in PostgreSQL. Production uses Secure cookies unless explicitly disabled for the local HTTP Docker demo. HTTPS, trusted proxy configuration and a proper public origin are required before hosting publicly. Account email is currently read-only after registration; email verification, forgotten-password recovery and MFA are not implemented.
 
 See the implementation references in [deployment instructions](docs/DEPLOYMENT.md).
+
+CI/CD verification: Automated GitHub Actions and Render staging deployment.
