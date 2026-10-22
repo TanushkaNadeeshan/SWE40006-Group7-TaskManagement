@@ -10,3 +10,9 @@ dist/
 !**/.env.example
 .DS_Store
 *.log
+
+# Automated test outputs
+coverage/
+**/coverage/
+playwright-report/
+test-results/

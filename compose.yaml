@@ -7,8 +7,6 @@ services:
       POSTGRES_USER: taskflow
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in project-root .env}
       POSTGRES_DB: group7_tasks
-    ports:
-      - "127.0.0.1:5433:5432"
     volumes:
       - taskflow_postgres_data:/var/lib/postgresql
       - ./backend/sql/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro

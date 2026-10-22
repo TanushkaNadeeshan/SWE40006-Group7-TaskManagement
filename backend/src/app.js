@@ -7,7 +7,7 @@ app.use(express.json({ limit: '50kb' }));
 const priorities = ['low','medium','high'];
 const statuses = ['todo','in_progress','done'];
 const validDate = x => x === null || (typeof x === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(x) && !Number.isNaN(Date.parse(x)) && new Date(x).toISOString().slice(0,10) === x);
-function parseTask(body) {
+export function parseTask(body) {
  const title = body.title;
  const description = body.description ?? '';
  const priority = body.priority ?? 'medium';
