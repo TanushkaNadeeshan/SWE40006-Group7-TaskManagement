@@ -5,34 +5,17 @@
   "scripts": {
     "dev": "node --watch src/server.js",
     "start": "node src/server.js",
-    "test": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --runInBand",
-    "test:coverage": "node --experimental-vm-modules ./node_modules/jest/bin/jest.js --coverage --runInBand"
+    "db:init": "node scripts/init-db.js",
+    "test": "node --test test/api.test.js test/security.test.js",
+    "db:claim-legacy": "node scripts/claim-legacy.js",
+    "db:make-admin": "node scripts/make-admin.js",
+    "demo": "node scripts/demo.js",
+    "test:integration": "node --test test/database.test.js test/features.test.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.2",
     "pg": "^8.13.1"
-  },
-  "devDependencies": {
-    "jest": "^29.7.0",
-    "supertest": "^7.1.1"
-  },
-  "jest": {
-    "testEnvironment": "node",
-    "transform": {},
-    "collectCoverageFrom": [
-      "src/app.js"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "statements": 75
-      }
-    },
-    "coverageReporters": [
-      "text",
-      "lcov",
-      "html"
-    ]
   }
 }

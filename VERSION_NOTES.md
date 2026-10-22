@@ -1,6 +1,6 @@
-# Phase 3 — Automated testing (reconstructed, unmerged)
-Based on the original post-Phase-2 testing package. Includes Jest/Supertest backend tests and Playwright browser tests for the original task dashboard.
+# Phase 4 — Expanded application checkpoint (reconstructed)
+Contains the final application's accounts, project/team management, Kanban, calendar, Gantt, files, analytics, and Node test suites. CI workflow, deployment document and Prometheus configuration are withheld for later checkpoints.
 
-NOT a claim that these tests passed or that this phase was previously finished. Run `npm install`, `npm install --prefix backend`, `npm run test:coverage`, and `npm run test:e2e` after Docker is running. Some package lockfiles are absent; generate them before committing.
+The included Docker Compose file references Prometheus config (omitted at this checkpoint), so run the local `npm run demo` and unit/integration tests rather than enabling the monitoring profile. This represents a **large replacement** of the earlier dashboard, not a small additive feature patch.
 
-This phase does **not** yet include the expanded app.
+Test commands: `npm ci`, `npm ci --prefix backend`, `npm ci --prefix frontend`, `npm run db:init`, `npm test`, `npm run test:integration`, `npm run build`, `npm run demo`. The local demo uses a disposable dataset and requires a valid `backend/.env`.
