@@ -1,6 +1,4 @@
-# Phase 4 — Expanded application checkpoint (reconstructed)
-Contains the final application's accounts, project/team management, Kanban, calendar, Gantt, files, analytics, and Node test suites. CI workflow, deployment document and Prometheus configuration are withheld for later checkpoints.
+# Phase 5 — CI and deployment preparation (reconstructed)
+Expanded full application with GitHub Actions CI (`.github/workflows/ci.yml`) and deployment instructions. The release workflow is withheld for the final checkpoint.
 
-The included Docker Compose file references Prometheus config (omitted at this checkpoint), so run the local `npm run demo` and unit/integration tests rather than enabling the monitoring profile. This represents a **large replacement** of the earlier dashboard, not a small additive feature patch.
-
-Test commands: `npm ci`, `npm ci --prefix backend`, `npm ci --prefix frontend`, `npm run db:init`, `npm test`, `npm run test:integration`, `npm run build`, `npm run demo`. The local demo uses a disposable dataset and requires a valid `backend/.env`.
+CAUTION: The current CI workflow exercises Docker's optional monitoring profile; its missing Prometheus files in this snapshot mean the workflow needs adapting before it can pass. This is a *review checkpoint*, not a verified deployable release. Run tests and build, and do not deploy until the workflow is corrected and browser testing completed.
